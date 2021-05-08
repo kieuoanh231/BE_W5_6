@@ -436,11 +436,10 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">TrainerID</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Web</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Code</th>
+                    <th scope="col">CompanyID</th>
+                    <th scope="col">Email</th>
                     <th scope="col">Phone</th>
                 </tr>
             </thead>
