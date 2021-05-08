@@ -16,9 +16,10 @@ class CompanySeeder extends Seeder
     public function run()
     {
         // $queryInsert='insert into companies values (null,?,?,?,?,?);';
-        for ($i=0; $i < 3000000; $i++) { 
+        for ($i=0; $i < 10; $i++) { 
             // DB::insert($queryInsert,["oanh","oanh.hihi","12","hihi","123456789"]);
             DB::table('companies')->insert([
+                'category_id' =>"1",
                 'company_name' =>"oanh",
                 'company_web' => "oanh.hihi",
                 'company_address' => "12",

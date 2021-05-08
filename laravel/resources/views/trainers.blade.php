@@ -408,6 +408,11 @@
          display: flex;
          justify-content: center;
        }
+       .color{
+           background: #f5c6cb;
+           /* color: #fff; */
+        }
+
 
     </style>
 </head>
@@ -417,30 +422,24 @@
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
         <h5 class="my-0 mr-md-auto font-weight-normal">Trainer name</h5>
         <nav class="my-2 my-md-0 mr-md-3">
-            <a class="p-2 text-dark" href="#">Features</a>
-            <a class="p-2 text-dark" href="#">Enterprise</a>
-            <a class="p-2 text-dark" href="#">Support</a>
-            <a class="p-2 text-dark" href="#">Pricing</a>
+            <a class="p-2 text-dark" href="{!!asset('trainers')!!}">Trainers</a>
+            <a class="p-2 text-dark" href="{!!asset('search/trainers')!!}">Search</a>
+            <a class="p-2 text-dark" href="{!!asset('companies')!!}">Companies</a>
+            <a class="p-2 text-dark" href="{!!asset('categories')!!}">Categories</a>
         </nav>
-        <a class="btn btn-outline-primary" href="#">Sign up</a>
-        <div id="extwaiokist" style="display:none" v="nipgg" q="17d4a1a0" c="23.82" i="31" u="0.002" s="04222100" d="1"
-            w="false" e="" m="BMe=" vn="9adfy">
-            <div id="extwaigglbit" style="display:none" v="nipgg" q="17d4a1a0" c="23.82" i="31" u="0.002" s="04222100"
-                d="1" w="false" e="" m="BMe="></div>
-        </div>
     </div>
-
+    
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
         <h1 class="display-4">List trainers</h1>
 
-        <table class="table">
+        <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">TrainerID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">CompanyID</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Phone</th>
+                    <th class="color" scope="col">TrainerID</th>
+                    <th class="color" scope="col">Name</th>
+                    <th class="color" scope="col">CompanyID</th>
+                    <th class="color" scope="col">Email</th>
+                    <th class="color" scope="col">Phone</th>
                 </tr>
             </thead>
             <tbody>
@@ -454,14 +453,13 @@
                     </tr>
                 @endforeach
             </tbody>
-        </table>
+          </table>
+        
         <div class="link"> {{ $trainers->links() }}</div>
     </div>
 
-    <div class="container">
-        <div class="card-deck mb-3 text-center">
-
-
+    <div class="container w-50">
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
             <footer class="pt-4 my-md-5 pt-md-5 border-top">
                 <div class="row">
                     <div class="col-12 col-md">

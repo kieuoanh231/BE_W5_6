@@ -16,13 +16,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TrainerController;
+use App\Http\Controllers\CategoryController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-
-
 Route::get('/companies', [CompanyController::class, 'companies']);
 Route::get('/trainers', [TrainerController::class, 'trainers']);
-Route::get('/search', [SearchController::class,'searchTrainers']);
+Route::get('/search/companies', [SearchController::class,'searchCompanies']);
+Route::get('/search/trainers', [SearchController::class,'searchTrainers']);
+Route::get('/categories', [CategoryController::class,'myMethod']);

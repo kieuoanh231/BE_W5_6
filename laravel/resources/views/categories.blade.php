@@ -25,16 +25,16 @@
             display: none;
         }
 
-        .link{
-         
-         display: flex;
-         justify-content: center;
-       }
-       .color{
-           background: #f5c6cb;
-           /* color: #fff; */
+        .link {
+
+            display: flex;
+            justify-content: center;
         }
 
+        .color {
+            background: #f5c6cb;
+            /* color: #fff; */
+        }
 
     </style>
 </head>
@@ -45,43 +45,38 @@
         <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="./trainers">Trainers</a>
-            <a class="p-2 text-dark" href="./search/companies">Search</a>
+            <a class="p-2 text-dark" href="./search">Search</a>
             <a class="p-2 text-dark" href="./companies">Companies</a>
             <a class="p-2 text-dark" href="./categories">Categories</a>
         </nav>
+
     </div>
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-4">List companies</h1>
-
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th class="color" scope="col">ID</th>
-                    <th class="color" scope="col">Category_ID</th>
-                    <th class="color" scope="col">Name</th>
-                    <th class="color" scope="col">Web</th>
-                    <th class="color" scope="col">Address</th>
-                    <th class="color" scope="col">Code</th>
-                    <th class="color" scope="col">Phone</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($companies as $company)
+        <h1 class="display-4">List categories</h1>
+        <div class="container w-75">
+            <table class="table table-striped">
+                <thead>
                     <tr>
-                        <th scope="row">{!! $company->company_id !!}</th>
-                        <td>{!! $company->category_id !!}</td>
-                        <td>{!! $company->company_name !!}</td>
-                        <td>{!! $company->company_web !!}</td>
-                        <td>{!! $company->company_address !!}</td>
-                        <td>{!! $company->company_code !!}</td>
-                        <td>{!! $company->company_phone !!}</td>
+                        <th class="color" scope="col">ID</th>
+                        <th class="color" scope="col">Name</th>
                     </tr>
-                @endforeach
-            </tbody>
-          </table>
-        
-        <div class="link"> {{ $companies->links() }}
+                </thead>
+                <tbody>
+
+
+                    @foreach ($categories as $category_name => $category_id)
+                        <tr>
+                            <th scope="row">{!! $category_id !!}</th>
+                            <td>{!! $category_name !!}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
+
+        {{-- <div class="link"> {{ $categories->links() }} --}}
         </div>
 
         <div class="container w-50">
