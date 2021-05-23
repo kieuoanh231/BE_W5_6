@@ -15,7 +15,7 @@ class TrainerSeeder extends Seeder
     public function run()
     {
         $queryInsert='insert into trainers values (null,?,?,?,?);';
-        for ($i=0; $i < 1; $i++) { 
+        for ($i=0; $i < 10; $i++) { 
             DB::insert($queryInsert,["oanh","1","","12345"]);
             // DB::table('trainers')->insert([
             //     'trainer_name' => "a",

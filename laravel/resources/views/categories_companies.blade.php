@@ -25,32 +25,6 @@
             display: none;
         }
 
-        .search-container {
-            margin-bottom: 10px;
-        }
-
-        input[type=text] {
-            padding: 6px;
-            margin-top: 8px;
-            font-size: 17px;
-            border: none;
-        }
-
-        .search-container button {
-
-            padding: 6px 10px;
-            margin-top: 8px;
-            margin-right: 16px;
-            background: #ddd;
-            font-size: 17px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .search-container button:hover {
-            background: #ccc;
-        }
-
         .link {
 
             display: flex;
@@ -62,17 +36,13 @@
             /* color: #fff; */
         }
 
-        .formselect{
-            width: 100%;
-        }
-
     </style>
 </head>
 
 <body data-new-gr-c-s-check-loaded="14.983.0" data-gr-ext-installed="">
 
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-        <h5 class="my-0 mr-md-auto font-weight-normal">Companies</h5>
+        <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="{!!asset('trainers')!!}">Trainers</a>
             <span>|</span>
@@ -88,70 +58,114 @@
     </div>
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-4">Search for Companies</h1>
-
-        <div class="search-container">
-            <form method="get" action="{!!asset('search/companies')!!}">
-                <input type="text" placeholder="Search for companies.." name="search">
-                <div class="formselect">
-                    {!! Form::select('categories', $categories, null) !!}
-                </div>
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
-        @if (isset($name)||isset($cateId))
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th class="color" scope="col">ID</th>
-                    <th class="color" scope="col">Category_ID</th>
-                    <th class="color" scope="col">Name</th>
-                    <th class="color" scope="col">Web</th>
-                    <th class="color" scope="col">Address</th>
-                    <th class="color" scope="col">Code</th>
-                    <th class="color" scope="col">Phone</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($companies as $company)
+        <h1 class="display-4">List categories</h1>
+        <div class="container w-75">
+            <table class="table table-striped">
+                <thead>
                     <tr>
-                        <th scope="row">{!! $company->company_id !!}</th>
-                        <td>{!! $company->category_id !!}</td>
-                        <td>{!! $company->company_name !!}</td>
-                        <td>{!! $company->company_web !!}</td>
-                        <td>{!! $company->company_address !!}</td>
-                        <td>{!! $company->company_code !!}</td>
-                        <td>{!! $company->company_phone !!}</td>
-                       
+                        <th class="color" scope="col">ID</th>
+                        <th class="color" scope="col">Name</th>
+                        <th class="color" scope="col">Company_id</th>
+                        <th class="color" scope="col">Company_name</th>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
-        <div class="link"> {{ $companies->withQueryString()->links() }}</div>
-        @endif
+                </thead>
+                <tbody>
 
+
+                      @foreach ($categories as $category)
+                        <tr>
+                            <th scope="row">{!! $category->category_id !!}</th>
+                            <td>{!! $category->category_name !!}</td>
+
+                            <td>
+                                <table class="table table-striped">
+                                    @foreach ($category->joinCompanies as $company)
+                                        <tr>
+                                            <td>{!! $company->company_id!!}</td>
+                                        </tr>
+                                        
+                                    @endforeach
+
+
+                                </table>
+                            </td>
+                            <td>
+                                <table class="table table-striped">
+                                    @foreach ($category->joinCompanies as $company)
+                                        <tr>
+                                            <td>{!! $company->company_name!!}</td>
+                                        </tr>
+                                        
+                                    @endforeach
+
+
+                                </table>
+                            </td>
+
+
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
 
-    <!-- Bootstrap core JavaScript
-        ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script>
-        window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')
 
-    </script>
-    <script src="../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/vendor/holder.min.js"></script>
-    <script>
-        Holder.addTheme('thumb', {
-            bg: '#55595c',
-            fg: '#eceeef',
-            text: 'Thumbnail'
-        });
-    </script>
+        {{-- <div class="link"> {{ $categories->links() }} --}}
+        </div>
+
+        <div class="container w-50">
+            <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+                <footer class="pt-4 my-md-5 pt-md-5 border-top">
+                    <div class="row">
+                        <div class="col-12 col-md">
+                            <img class="mb-2" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg"
+                                alt="" width="24" height="24">
+                            <small class="d-block mb-3 text-muted">© 2017-2018</small>
+                        </div>
+                        <div class="col-6 col-md">
+                            <h5>Features</h5>
+                            <ul class="list-unstyled text-small">
+                                <li><a class="text-muted" href="#">Cool stuff</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md">
+                            <h5>Resources</h5>
+                            <ul class="list-unstyled text-small">
+                                <li><a class="text-muted" href="#">Resource</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md">
+                            <h5>About</h5>
+                            <ul class="list-unstyled text-small">
+                                <li><a class="text-muted" href="#">Team</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+
+
+            <!-- Bootstrap core JavaScript
+        ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>
+            <script>
+                window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')
+
+            </script>
+            <script src="../../assets/js/vendor/popper.min.js"></script>
+            <script src="../../dist/js/bootstrap.min.js"></script>
+            <script src="../../assets/js/vendor/holder.min.js"></script>
+            <script>
+                Holder.addTheme('thumb', {
+                    bg: '#55595c',
+                    fg: '#eceeef',
+                    text: 'Thumbnail'
+                });
+
+            </script>
 
 
 </body>

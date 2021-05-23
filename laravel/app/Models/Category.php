@@ -9,4 +9,8 @@ class Category extends Model
 {
     protected $table = 'categories';
 
+    public function joinCompanies()
+    {
+    	return $this->hasMany('App\Models\Company','category_id','category_id');
+    }
 }
