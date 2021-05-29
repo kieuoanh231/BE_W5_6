@@ -424,9 +424,13 @@
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="{!!asset('trainers')!!}">Trainers</a>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <span>|</span>
             <a class="p-2 text-dark" href="{!!asset('search/trainers')!!}">Search</a>
             <span>|</span>
+=======
+            <a class="p-2 text-dark" href="{!!asset('search/trainers')!!}">Search</a>
+>>>>>>> parent of 0285a82 (week8)
 =======
             <a class="p-2 text-dark" href="{!!asset('search/trainers')!!}">Search</a>
 >>>>>>> parent of 0285a82 (week8)

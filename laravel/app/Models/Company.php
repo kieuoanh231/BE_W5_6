@@ -16,11 +16,14 @@ class Company extends Model
         return $data;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     public function joinTrainer(){
         return $this->hasOne(Trainer::class,'company_id','company_id');
     }
 
+=======
+>>>>>>> parent of 0285a82 (week8)
 =======
 >>>>>>> parent of 0285a82 (week8)
 }
