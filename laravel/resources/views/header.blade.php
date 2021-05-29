@@ -3,8 +3,15 @@
     <nav class="my-2 my-md-0 mr-md-3">
         <a class="p-2 text-dark" href="{!!asset('trainers')!!}">Trainers</a>
         <span>|</span>
+        
+        @if (Route::getFacadeRoot()->current()->uri()=='trainers')
+        <a class="p-2 text-dark" href="{!!asset('search/trainers')!!}">Search</a>
+        <span>|</span>
+        @elseif(Route::getFacadeRoot()->current()->uri()=='companies')
         <a class="p-2 text-dark" href="{!!asset('search/companies')!!}">Search</a>
         <span>|</span>
+        @endif
+
         <a class="p-2 text-dark" href="{!!asset('companies')!!}">Companies</a>
         <span>|</span>
         <a class="p-2 text-dark" href="{!!asset('categories')!!}">Show Categories</a>

@@ -29,31 +29,25 @@
                             <th scope="row">{!! $category->category_id !!}</th>
                             <td>{!! $category->category_name !!}</td>
 
-                            <td>
+                            <td style="padding: 0 0">
                                 <table class="table table-striped">
                                     @foreach ($category->joinCompanies as $company)
                                         <tr>
                                             <td>{!! $company->company_id!!}</td>
                                         </tr>
-                                        
                                     @endforeach
-
                                 </table>
                             </td>
-                            <td>
+
+                            <td  style="padding: 0 0">
                                 <table class="table table-striped">
                                     @foreach ($category->joinCompanies as $company)
                                         <tr>
                                             <td>{!! $company->company_name!!}</td>
                                         </tr>
-                                        
                                     @endforeach
-
-
                                 </table>
                             </td>
-
-
                         </tr>
                     @endforeach
                 </tbody>
