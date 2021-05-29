@@ -15,6 +15,9 @@ class CompanyController extends Controller
     {
         $obj = new Company();
         $companies = $obj->paginate(20);
+        // $first=$obj->find(1);
+        // var_dump($first);
+        // die();
         return view('companies', ['companies' => $companies]);
     }
 

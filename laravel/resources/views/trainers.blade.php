@@ -424,7 +424,7 @@
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="{!!asset('trainers')!!}">Trainers</a>
             <span>|</span>
-            <a class="p-2 text-dark" href="{!!asset('search/companies')!!}">Search</a>
+            <a class="p-2 text-dark" href="{!!asset('search/trainers')!!}">Search</a>
             <span>|</span>
             <a class="p-2 text-dark" href="{!!asset('companies')!!}">Companies</a>
             <span>|</span>

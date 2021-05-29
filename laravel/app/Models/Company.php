@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Company extends Model
 {
     protected $table = 'companies';
+    protected $primaryKey='company_id';
     // use HasFactory;
 
     public function search($key,$categoryId){
@@ -18,4 +19,5 @@ class Company extends Model
     public function joinTrainer(){
         return $this->hasOne(Trainer::class,'company_id','company_id');
     }
+
 }
