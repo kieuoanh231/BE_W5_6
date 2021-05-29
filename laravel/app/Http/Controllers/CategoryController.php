@@ -12,14 +12,17 @@ class CategoryController extends Controller
     {
         $obj = new Category();
         $categories = $obj->paginate(20);
-        return view('categories_companies', ['categories' => $categories]);
+        return view('categories', ['categories' => $categories]);
     }
 
     public function myMethod(){
         $categories = DB::table('categories')->pluck('category_id', 'category_name')->toArray();
+        // foreach ($categories as $category_name => $category_id) {
+        //    echo($category_name);
+        // }
         return view('categories', ['categories' => $categories]);
         // @foreach ($users as $id => $name)
-        //    echo {{ $name }} có mã số là {{ $id }}
+        //     {{ $name }} có mã số là {{ $id }}
         // @endforeach
     }
 }

@@ -17,8 +17,4 @@ class Trainer extends Model
         // $data->withPath('/search' . '?search='.$key);
         return $data;
     }
-
-    public function joinCompanie(){
-        return $this->hasOne(Company::class,'company_id','company_id');//"key1"=khóa ngoại ,"key2" = khóa local
-    }
 }

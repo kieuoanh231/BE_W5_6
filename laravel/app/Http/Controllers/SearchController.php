@@ -18,17 +18,15 @@ class SearchController extends Controller
    {
 
       $name = $request->get('search');
-      $cateid = $request->get('categories');
-         // var_dump($cateid);die();
+      //    var_dump($name);die();
       //    die();
       $obj = new Company();
-      $search = $obj->search($name,$cateid)->paginate(25);
+      $search = $obj->search($name)->paginate(25);
       $obj1 = new Category();
-      $categories = $obj1->pluck('category_name','category_id');
+      $categories = $obj1->pluck('category_name');
       return view('searchcompanies', [
          'companies' => $search,
          'name' => $name,
-         'cateId'=> $cateid,
          'categories'=> $categories,
       ]);
    }

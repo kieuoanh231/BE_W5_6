@@ -423,14 +423,15 @@
         <h5 class="my-0 mr-md-auto font-weight-normal">Trainer name</h5>
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="{!!asset('trainers')!!}">Trainers</a>
+<<<<<<< HEAD
             <span>|</span>
             <a class="p-2 text-dark" href="{!!asset('search/trainers')!!}">Search</a>
             <span>|</span>
+=======
+            <a class="p-2 text-dark" href="{!!asset('search/trainers')!!}">Search</a>
+>>>>>>> parent of 0285a82 (week8)
             <a class="p-2 text-dark" href="{!!asset('companies')!!}">Companies</a>
-            <span>|</span>
-            <a class="p-2 text-dark" href="{!!asset('categories')!!}">Show Categories</a>
-            <span>|</span>
-            <a class="p-2 text-dark" href="{!!asset('categories-companies')!!}">Categories Join Companies</a>
+            <a class="p-2 text-dark" href="{!!asset('categories')!!}">Categories</a>
         </nav>
     </div>
     
@@ -445,7 +446,6 @@
                     <th class="color" scope="col">CompanyID</th>
                     <th class="color" scope="col">Email</th>
                     <th class="color" scope="col">Phone</th>
-                    <th class="color" scope="col">Company_name</th>
                 </tr>
             </thead>
             <tbody>
@@ -456,7 +456,6 @@
                         <td>{!! $trainer->company_id !!}</td>
                         <td>{!! $trainer->trainer_email !!}</td>
                         <td>{!! $trainer->trainer_phone !!}</td>
-                        <td>{!!$trainer->joinCompanie['company_name']!!}</td>
                     </tr>
                 @endforeach
             </tbody>

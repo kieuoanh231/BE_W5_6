@@ -11,13 +11,16 @@ class Company extends Model
     protected $primaryKey='company_id';
     // use HasFactory;
 
-    public function search($key,$categoryId){
-       $data= self::where('company_name','like','%'.$key.'%')->where('category_id','=', $categoryId);
+    public function search($key){
+       $data= self::where('company_name','like','%'.$key.'%');
         return $data;
     }
+<<<<<<< HEAD
 
     public function joinTrainer(){
         return $this->hasOne(Trainer::class,'company_id','company_id');
     }
 
+=======
+>>>>>>> parent of 0285a82 (week8)
 }

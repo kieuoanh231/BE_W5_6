@@ -9,9 +9,12 @@ class Category extends Model
 {
     protected $table = 'categories';
 
+<<<<<<< HEAD
     public function joinCompanies()
     {
     	return $this->hasMany('App\Models\Company','category_id','category_id');
     }
     
+=======
+>>>>>>> parent of 0285a82 (week8)
 }

@@ -75,14 +75,9 @@
         <h5 class="my-0 mr-md-auto font-weight-normal">Companies</h5>
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="{!!asset('trainers')!!}">Trainers</a>
-            <span>|</span>
             <a class="p-2 text-dark" href="{!!asset('search/companies')!!}">Search</a>
-            <span>|</span>
             <a class="p-2 text-dark" href="{!!asset('companies')!!}">Companies</a>
-            <span>|</span>
-            <a class="p-2 text-dark" href="{!!asset('categories')!!}">Show Categories</a>
-            <span>|</span>
-            <a class="p-2 text-dark" href="{!!asset('categories-companies')!!}">Categories Join Companies</a>
+            <a class="p-2 text-dark" href="{!!asset('categories')!!}">Categories</a>
         </nav>
 
     </div>
@@ -93,44 +88,46 @@
         <div class="search-container">
             <form method="get" action="{!!asset('search/companies')!!}">
                 <input type="text" placeholder="Search for companies.." name="search">
-                <div class="formselect">
-                    {!! Form::select('categories', $categories, null) !!}
-                </div>
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <button type="submit">Search</button>
             </form>
+            <div class="formselect">
+                {!! Form::select('categories[]', $categories, null) !!}
+            </div>
         </div>
-        @if (isset($name)||isset($cateId))
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th class="color" scope="col">ID</th>
-                    <th class="color" scope="col">Category_ID</th>
-                    <th class="color" scope="col">Name</th>
-                    <th class="color" scope="col">Web</th>
-                    <th class="color" scope="col">Address</th>
-                    <th class="color" scope="col">Code</th>
-                    <th class="color" scope="col">Phone</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($companies as $company)
+        @isset($name)
+            <table class="table table-striped">
+                <thead>
                     <tr>
-                        <th scope="row">{!! $company->company_id !!}</th>
-                        <td>{!! $company->category_id !!}</td>
-                        <td>{!! $company->company_name !!}</td>
-                        <td>{!! $company->company_web !!}</td>
-                        <td>{!! $company->company_address !!}</td>
-                        <td>{!! $company->company_code !!}</td>
-                        <td>{!! $company->company_phone !!}</td>
-                       
+                        <th class="color" scope="col">ID</th>
+                        <th class="color" scope="col">Category_ID</th>
+                        <th class="color" scope="col">Name</th>
+                        <th class="color" scope="col">Web</th>
+                        <th class="color" scope="col">Address</th>
+                        <th class="color" scope="col">Code</th>
+                        <th class="color" scope="col">Phone</th>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
-        <div class="link"> {{ $companies->withQueryString()->links() }}</div>
-        @endif
+                </thead>
+                <tbody>
+                    @foreach ($companies as $company)
+                        <tr>
+                            <th scope="row">{!! $company->company_id !!}</th>
+                            <td>{!! $company->category_id !!}</td>
+                            <td>{!! $company->company_name !!}</td>
+                            <td>{!! $company->company_web !!}</td>
+                            <td>{!! $company->company_address !!}</td>
+                            <td>{!! $company->company_code !!}</td>
+                            <td>{!! $company->company_phone !!}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            <div class="link"> {{ $companies->withQueryString()->links() }}</div>
 
         </div>
+
+
+
+    @endisset
 
     <!-- Bootstrap core JavaScript
         ================================================== -->
@@ -151,6 +148,7 @@
             fg: '#eceeef',
             text: 'Thumbnail'
         });
+
     </script>
 
 
