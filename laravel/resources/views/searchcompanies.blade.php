@@ -75,9 +75,14 @@
         <h5 class="my-0 mr-md-auto font-weight-normal">Companies</h5>
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="{!!asset('trainers')!!}">Trainers</a>
+            <span>|</span>
             <a class="p-2 text-dark" href="{!!asset('search/companies')!!}">Search</a>
+            <span>|</span>
             <a class="p-2 text-dark" href="{!!asset('companies')!!}">Companies</a>
-            <a class="p-2 text-dark" href="{!!asset('categories')!!}">Categories</a>
+            <span>|</span>
+            <a class="p-2 text-dark" href="{!!asset('categories')!!}">Show Categories</a>
+            <span>|</span>
+            <a class="p-2 text-dark" href="{!!asset('categories-companies')!!}">Categories Join Companies</a>
         </nav>
 
     </div>
@@ -89,12 +94,13 @@
             <form method="get" action="{!!asset('search/companies')!!}">
                 <input type="text" placeholder="Search for companies.." name="search">
                 <button type="submit">Search</button>
+                <div class="formselect">
+                    {!! Form::select('categories[]', $categories, null) !!}
+                </div>
             </form>
-            <div class="formselect">
-                {!! Form::select('categories[]', $categories, null) !!}
-            </div>
+           
         </div>
-        @isset($name)
+        @if (isset($name)||isset($cateId))
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -122,12 +128,12 @@
                 </tbody>
             </table>
             <div class="link"> {{ $companies->withQueryString()->links() }}</div>
+        @endif
 
         </div>
 
 
 
-    @endisset
 
     <!-- Bootstrap core JavaScript
         ================================================== -->

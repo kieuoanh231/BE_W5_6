@@ -12,7 +12,7 @@ class CategoryController extends Controller
     {
         $obj = new Category();
         $categories = $obj->paginate(20);
-        return view('categories', ['categories' => $categories]);
+        return view('categories_companies', ['categories' => $categories]);
     }
 
     public function myMethod(){
@@ -25,4 +25,5 @@ class CategoryController extends Controller
         //     {{ $name }} có mã số là {{ $id }}
         // @endforeach
     }
+
 }
