@@ -35,9 +35,9 @@
                                         </tr>
                                     @endforeach
                                 </table>
-                            </td> --}}
+                            </td>
 
-                            {{-- <td  style="padding: 0 0">
+                            <td  style="padding: 0 0">
                                 <table class="table table-striped">
                                     @foreach ($category->joinCompanies as $company)
                                         <tr>

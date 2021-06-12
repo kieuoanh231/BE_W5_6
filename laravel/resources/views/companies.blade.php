@@ -36,7 +36,7 @@
                         <td>{!! $company->company_address !!}</td>
                         <td>{!! $company->company_code !!}</td>
                         <td>{!! $company->company_phone !!}</td>
-                         <td>{!! $company->joinTrainer['trainer_name'] !!}</td>
+                         <td>{!! $company->getCompaniesRelation['is_leader'] !!}</td>
                     </tr>
                 @endforeach
             </tbody>

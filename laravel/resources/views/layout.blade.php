@@ -1,5 +1,4 @@
 <html>
-
 <head>
 @include('meta');
 </head>

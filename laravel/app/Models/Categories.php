@@ -25,4 +25,9 @@ class Categories extends Model
     public function category(){
         return $this->morphTo();
     }
+
+    // public function joinCompanies()
+    // {
+    // 	return $this->hasMany('App\Models\Companies','category_id','category_id');
+    // }
 }
