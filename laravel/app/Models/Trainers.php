@@ -15,15 +15,15 @@ class Trainers extends Model
         return $this->hasOne(Companies::class,"company_id","company_id");
     }
 
-    public function search($key)
-    {
-            $trainers = $this->query()
-                        ->where('trainer_name','LIKE', "%{$key}%")
-                        ->orWhere('trainer_phone','LIKE',"%{$key}%")
-                        ->orWhere('trainer_email','LIKE',"%{$key}%")
-                        ->paginate(15);
-            $trainers->withPath(route('search') . "?k=" . str_replace(' ','+',$key));
-            return $trainers;
-            //return $key;
-    }
+    // public function search($key)
+    // {
+    //         $trainers = $this->query()
+    //                     ->where('trainer_name','LIKE', "%{$key}%")
+    //                     ->orWhere('trainer_phone','LIKE',"%{$key}%")
+    //                     ->orWhere('trainer_email','LIKE',"%{$key}%")
+    //                     ->paginate(15);
+    //         $trainers->withPath(route('search') . "?k=" . str_replace(' ','+',$key));
+    //         return $trainers;
+    //         //return $key;
+    // }
 }
