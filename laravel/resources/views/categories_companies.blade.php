@@ -22,14 +22,12 @@
                     </tr>
                 </thead>
                 <tbody>
-
-
                       @foreach ($categories as $category)
                         <tr>
                             <th scope="row">{!! $category->category_id !!}</th>
                             <td>{!! $category->category_name !!}</td>
 
-                            <td style="padding: 0 0">
+                            {{-- <td style="padding: 0 0">
                                 <table class="table table-striped">
                                     @foreach ($category->joinCompanies as $company)
                                         <tr>
@@ -37,9 +35,9 @@
                                         </tr>
                                     @endforeach
                                 </table>
-                            </td>
+                            </td> --}}
 
-                            <td  style="padding: 0 0">
+                            {{-- <td  style="padding: 0 0">
                                 <table class="table table-striped">
                                     @foreach ($category->joinCompanies as $company)
                                         <tr>
@@ -47,7 +45,7 @@
                                         </tr>
                                     @endforeach
                                 </table>
-                            </td>
+                            </td> --}}
                         </tr>
                     @endforeach
                 </tbody>

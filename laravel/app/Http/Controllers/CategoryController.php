@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categories;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -10,7 +11,7 @@ class CategoryController extends Controller
 {
     public function categories()
     {
-        $obj = new Category();
+        $obj = new Categories();
         $categories = $obj->paginate(20);
         return view('categories_companies', ['categories' => $categories]);
     }
