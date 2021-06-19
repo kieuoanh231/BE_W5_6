@@ -9,11 +9,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 // use Illuminate\Auth\EloquentUserProvider;
+// use Illuminate\Auth\AuthManager;
+// use Illuminate\Auth\SessionGuard;
 // use Illuminate\Foundation\Auth\User;
 
 class CustomAuthController extends Controller
 {
-    private $name;
     public function index()
     {
         return view('auth.login');
@@ -23,23 +24,26 @@ class CustomAuthController extends Controller
     {
         //xác nhận 2 trường này là bắt buộc
         $request->validate([
-            'user_email' => 'required',
-            'user_password' => 'required',
+            'email' => 'required',
+            'password' => 'required',
         ]);
         //lấy email,password
-        $credentials = $request->only('user_email', 'user_password');
-        // dd(Auth::attempt($credentials));
+        $credentials = $request->only('email', 'password');
+        // dd(Auth::attempt(['user_email'=>$credentials['email'],'user_password'=>$credentials['password']]));
         //Kiểm tra auth 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt(['user_email' => $credentials['email'], 'password' => $credentials['password']])) {
             // $this->name = Auth::user();
-            return redirect()->intended('register')->withSuccess('Signed in');
+            // session::put('users',$this->name);
+            // dd($request->session()->has('users'));
+            // return redirect()->intended("dashboard")->with(['user' => Auth::user()]);
+            return redirect()->intended("dashboard")->withSuccess('Logined success');
         }
+
+
         return redirect("login")->withSuccess('Login details are not valid');
     }
-
     public function register()
     {
-        // dd($this->name);
         return view('auth.register');
     }
 
@@ -47,13 +51,13 @@ class CustomAuthController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,user_email',
             'password' => 'required',
         ]);
 
         $data = $request->all();
         $check = $this->create($data);
-        return redirect("dashboard")->withSuccess('You have signed-in');
+        return redirect("login")->withSuccess('You have signed-in');
     }
 
     public function create(array $data)
@@ -65,13 +69,12 @@ class CustomAuthController extends Controller
         ]);
     }
 
-    public function dashboard()
+    public function dashboard(Request $request)
     {
         if (Auth::check()) {
             return view('dashboard');
         }
-
-        return redirect("login")->withSuccess('You are not allowed to access');
+        return redirect("login")->withSuccess('You are not alowed to access');
     }
 
 
@@ -80,6 +83,13 @@ class CustomAuthController extends Controller
         Session::flush();
         Auth::logout();
 
-        return Redirect('login');
+        return Redirect('dashboard');
+    }
+
+    public function show(Request $request, $id)
+    {
+        $value = $request->session()->all;
+
+        //
     }
 }

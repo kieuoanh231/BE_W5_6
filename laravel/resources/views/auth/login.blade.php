@@ -12,17 +12,17 @@
                         <form method="POST" action="{{ route('login.custom') }}">
                             @csrf
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="Email" id="email" class="form-control" name="user_email" required
+                                <input type="text" placeholder="Email" id="email" class="form-control" name="email" required
                                     autofocus>
-                                @if ($errors->has('user_email'))
-                                <span class="text-danger">{{ $errors->first('user_email') }}</span>
+                                @if ($errors->has('email'))
+                                <span class="text-danger">{{ $errors->first('email') }}</span>
                                 @endif
                             </div>
 
                             <div class="form-group mb-3">
-                                <input type="password" placeholder="Password" id="password" class="form-control" name="user_password" required>
-                                @if ($errors->has('user_password'))
-                                <span class="text-danger">{{ $errors->first('user_password') }}</span>
+                                <input type="password" placeholder="Password" id="password" class="form-control" name="password" required>
+                                @if ($errors->has('password'))
+                                <span class="text-danger">{{ $errors->first('password') }}</span>
                                 @endif
                             </div>
 

@@ -11,6 +11,7 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
+    protected $primaryKey='user_id';
 
     /**
      * The attributes that are mass assignable.
@@ -41,9 +42,17 @@ class User extends Authenticatable
     // protected $casts = [
     //     'email_verified_at' => 'datetime',
     // ];
-        // public function mail()
-        // {
-        //     return 'user_email';
-        // }
- 
+    // public function mail()
+    // {
+    //     return 'user_email';
+    // }
+
+    /**
+     * Get the password for the user.
+     *
+     * @return string
+     */
+    public function getAuthPassword(){
+        return $this->user_password;
+    }
 }
