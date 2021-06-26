@@ -25,7 +25,6 @@ interface Authenticatable
      */
     public function getAuthPassword();
 
-
     /**
      * Get the token value for the "remember me" session.
      *

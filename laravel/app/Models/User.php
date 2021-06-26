@@ -7,11 +7,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
-    protected $primaryKey='user_id';
 
     /**
      * The attributes that are mass assignable.
@@ -19,9 +17,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'user_name',
-        'user_email',
-        'user_password',
+        'name',
+        'email',
+        'password',
     ];
 
     /**
@@ -30,7 +28,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'user_password',
+        'password',
         'remember_token',
     ];
 
@@ -39,20 +37,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    // protected $casts = [
-    //     'email_verified_at' => 'datetime',
-    // ];
-    // public function mail()
-    // {
-    //     return 'user_email';
-    // }
-
-    /**
-     * Get the password for the user.
-     *
-     * @return string
-     */
-    public function getAuthPassword(){
-        return $this->user_password;
-    }
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 }
