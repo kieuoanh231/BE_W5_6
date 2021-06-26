@@ -25,12 +25,12 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'v8.5.20',
-    'version' => '8.5.20.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '235bba40e5db37839b795f1f9c3cb45a04e9bff6',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -166,6 +166,60 @@ private static $installed = array (
       ),
       'reference' => '2edbc73a4687d9085c8f20f398eebade844e8424',
     ),
+    'foostart/package-acl' => 
+    array (
+      'pretty_version' => '10.0.10',
+      'version' => '10.0.10.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9c11b8b844332349ced1f531f51f6df0ad5c1342',
+    ),
+    'foostart/package-category' => 
+    array (
+      'pretty_version' => '10.0.9',
+      'version' => '10.0.9.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6c1078d254f4613bd95efe4702da2b4123560b82',
+    ),
+    'foostart/package-filemanager' => 
+    array (
+      'pretty_version' => '10.0.9',
+      'version' => '10.0.9.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3bf781596178f047ad9b02ea698b15a504031af6',
+    ),
+    'foostart/package-post' => 
+    array (
+      'pretty_version' => '10.0.9',
+      'version' => '10.0.9.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '61209fa15e13892ca689e3de76be57ccff06c290',
+    ),
+    'foostart/package-sentry' => 
+    array (
+      'pretty_version' => '10.0.8',
+      'version' => '10.0.8.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '61dcb918ecefc7141c47de4c873866535189bf3d',
+    ),
+    'foostart/package-slideshow' => 
+    array (
+      'pretty_version' => '10.0.10',
+      'version' => '10.0.10.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '51917400e4fa97aa33cad85577b3d71ea99a7aaf',
+    ),
     'fruitcake/laravel-cors' => 
     array (
       'pretty_version' => 'v2.0.4',
@@ -183,6 +237,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '7e279d2cd5d7fbb156ce46daada972355cea27bb',
+    ),
+    'gregwar/captcha' => 
+    array (
+      'pretty_version' => 'v1.1.9',
+      'version' => '1.1.9.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4bb668e6b40e3205a020ca5ee4ca8cff8b8780c5',
     ),
     'guzzlehttp/guzzle' => 
     array (
@@ -437,6 +500,24 @@ private static $installed = array (
         0 => 'v8.48.2',
       ),
     ),
+    'intervention/image' => 
+    array (
+      'pretty_version' => '2.5.1',
+      'version' => '2.5.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'abbf18d5ab8367f96b3205ca3c89fb2fa598c69e',
+    ),
+    'kieuoanh/backend' => 
+    array (
+      'pretty_version' => '1.0.0',
+      'version' => '1.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8896ec2e1de3f05e4bef9dde845553c75e9d0fbc',
+    ),
     'kodova/hamcrest-php' => 
     array (
       'replaced' => 
@@ -455,12 +536,12 @@ private static $installed = array (
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => 'v8.5.20',
-      'version' => '8.5.20.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '235bba40e5db37839b795f1f9c3cb45a04e9bff6',
     ),
     'laravel/sail' => 
     array (
@@ -479,6 +560,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '04ad32c1a3328081097a181875733fa51f402083',
+    ),
+    'laravelcollective/html' => 
+    array (
+      'pretty_version' => 'v6.2.1',
+      'version' => '6.2.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ae15b9c4bf918ec3a78f092b8555551dd693fde3',
     ),
     'league/commonmark' => 
     array (
@@ -775,8 +865,8 @@ private static $installed = array (
     array (
       'provided' => 
       array (
-        0 => '1.0',
-        1 => '1.0.0',
+        0 => '1.0.0',
+        1 => '1.0',
       ),
     ),
     'psr/simple-cache' => 
